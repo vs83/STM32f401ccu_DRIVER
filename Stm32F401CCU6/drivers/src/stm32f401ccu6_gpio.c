@@ -106,13 +106,13 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
 	//1. configure the pin of gpio pin
-//	if (pGPIOHandle->GPIO_PinConfig. <= GPIO_MODE_ANALOG)
-//	{
-//
-//	}else
-//	{
-//
-//	}
+	if (pGPIOHandle->GPIO_PinConfig. <= GPIO_MODE_ANALOG)
+	{
+
+	}else
+	{
+
+	}
 	//2. configure the speed
 	//3. configure pupd setting
 	//4. configure the optype
