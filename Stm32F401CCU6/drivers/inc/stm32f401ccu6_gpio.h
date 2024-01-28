@@ -2,7 +2,7 @@
  * stm32f401ccu6_gpio.h
  *
  *  Created on: Jun 26, 2023
- *      Author: Mr. Tactical
+ *      Author: Mr. Vikash
  */
 
 #ifndef INC_STM32F401CCU6_GPIO_H_
@@ -27,11 +27,12 @@ typedef struct
 
 typedef struct
 {
-
 	GPIO_RegDef_t *pGPIOx;
 	GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
+
+
 
 // GPIO_PIN_NUMBERS
 // GPIO pin number

@@ -10,7 +10,13 @@
 #include <stdint.h>
 #define __vo volatile
 
-
+// Macros to reset GPIOx
+#define GPIOA_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 0));		(RCC->AHB1RSTR &= ~(1 << 0)); }while(0);
+#define GPIOB_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 1));		(RCC->AHB1RSTR &= ~(1 << 1)); }while(0);
+#define GPIOC_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 2));		(RCC->AHB1RSTR &= ~(1 << 2)); }while(0);
+#define GPIOD_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 3));		(RCC->AHB1RSTR &= ~(1 << 3)); }while(0);
+#define GPIOE_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 4));		(RCC->AHB1RSTR &= ~(1 << 4)); }while(0);
+#define GPIOH_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 5));		(RCC->AHB1RSTR &= ~(1 << 5)); }while(0);
 //Some Generic macros
 
 #define ENABLE 			1
@@ -164,7 +170,6 @@ typedef struct
 #define GPIOE                  ((GPIO_RegDef_t*)GPIOE_BASEADDR)
 #define GPIOH                  ((GPIO_RegDef_t*)GPIOH_BASEADDR)
 
-
 #define RCC 				   ((RCC_RegDef_t*)RCC_BASEADDR)
 
 
@@ -223,7 +228,7 @@ typedef struct
 
 
 
-// Clock enable Macros for SPIx peripherals
+// Clock disable Macros for SPIx peripherals
 
 #define SPI1_PCLK_DI()		(RCC-> APB2ENR &= ~(1 << 12))
 #define SPI2_PCLK_DI()		(RCC-> APB1ENR &= ~(1 << 14))
@@ -232,11 +237,12 @@ typedef struct
 
 
 
-// Clock enable Macros for UARTx peripherals
+// Clock disable Macros for UARTx peripherals
 
 #define USART1_PCLK_DI()		(RCC-> APB2ENR &= ~(1 << 4))
 #define USART2_PCLK_DI()		(RCC-> APB1ENR &= ~(1 << 17))
 #define USART6_PCLK_DI()		(RCC-> APB2ENR &= ~(1 << 5))
+
 
 
 
